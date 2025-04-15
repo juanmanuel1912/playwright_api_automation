@@ -1,0 +1,27 @@
+{
+  "name": "api-auto-playwright",
+  "version": "1.0.0",
+  "description": "API Automation Framework with Playwright, Cucumber and Reports",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:smoke": "cucumber-js --tags @smoke --format @cucumber/pretty-formatter --format json:reports/cucumber.json",
+    "report": "node reports/generate-cucumber-report.js",
+    "test:with-report": "npm run test:smoke && npm run report"
+  },
+  "keywords": [
+    "api",
+    "testing",
+    "automation",
+    "playwright",
+    "cucumber"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.0.1",
+    "@cucumber/pretty-formatter": "^1.0.0",
+    "@playwright/test": "^1.42.1",
+    "cucumber-html-reporter": "^7.2.0"
+  }
+}

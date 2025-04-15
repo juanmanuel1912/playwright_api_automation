@@ -1,0 +1,622 @@
+[
+  {
+    "description": "    As an API user\n    I want to manage authentication\n    So that I can access secure endpoints",
+    "elements": [
+      {
+        "description": "",
+        "id": "authentication-api-testing;successfully-create-authentication-token",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Successfully create authentication token",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 25118199
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "username",
+                      "password"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "admin",
+                      "password123"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I request a token with valid credentials:",
+            "match": {
+              "location": "src\\step-definitions\\auth.steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 646271700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "the token should be created successfully",
+            "match": {
+              "location": "src\\step-definitions\\auth.steps.js:21"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 4305299,
+              "error_message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31mundefined\u001b[39m\n    at Proxy.<anonymous> (C:\\Users\\JUAN\\api-auto-playwright\\node_modules\\playwright\\lib\\matchers\\expect.js:254:37)\n    at World.<anonymous> (C:\\Users\\JUAN\\api-auto-playwright\\src\\step-definitions\\auth.steps.js:22:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "the response should have a valid token format",
+            "match": {
+              "location": "src\\step-definitions\\auth.steps.js:26"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "the token should be non-empty",
+            "match": {
+              "location": "src\\step-definitions\\auth.steps.js:31"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1982100
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 6
+          },
+          {
+            "name": "@happy-path",
+            "line": 6
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "authentication-api-testing",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Authentication API Testing",
+    "tags": [],
+    "uri": "src\\features\\auth.feature"
+  },
+  {
+    "description": "    As a hotel manager\n    I want to manage hotel bookings\n    So that I can handle room reservations effectively",
+    "elements": [
+      {
+        "description": "",
+        "id": "booking-api-testing;create-a-new-booking-successfully",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Create a new booking successfully",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 195600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I have authentication token",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 113967799
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "firstname",
+                      "lastname",
+                      "totalprice",
+                      "depositpaid",
+                      "checkin",
+                      "checkout",
+                      "additionalneeds"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "John",
+                      "Doe",
+                      "150",
+                      "true",
+                      "2025-06-01",
+                      "2025-06-05",
+                      "Breakfast"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 11,
+            "name": "I create a booking with the following details:",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 115304399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "the booking should be created successfully",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2301199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the response should include booking ID",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 702000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "the booking details should match the input data",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3431399
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 561400
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 9
+          },
+          {
+            "name": "@happy-path",
+            "line": 9
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "booking-api-testing;retrieve-an-existing-booking",
+        "keyword": "Scenario",
+        "line": 19,
+        "name": "Retrieve an existing booking",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 198400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I have authentication token",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 116414699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 20,
+            "name": "I have an existing booking",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 113715700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "I request the booking details",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:63"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 112154300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "the booking information should be returned successfully",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:71"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 819500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "all booking fields should be present",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1025399
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 118599
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 18
+          },
+          {
+            "name": "@happy-path",
+            "line": 18
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "booking-api-testing;delete-an-existing-booking",
+        "keyword": "Scenario",
+        "line": 45,
+        "name": "Delete an existing booking",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 228399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I have authentication token",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 114655999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 46,
+            "name": "I have an existing booking",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 113369099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 47,
+            "name": "I delete the booking",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:133"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 229673900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 48,
+            "name": "the booking should be deleted successfully",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:141"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 447200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 49,
+            "name": "the booking should not be retrievable",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:145"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 122723399
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 75200
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 44
+          },
+          {
+            "name": "@happy-path",
+            "line": 44
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "booking-api-testing;attempt-to-retrieve-non-existent-booking",
+        "keyword": "Scenario",
+        "line": 52,
+        "name": "Attempt to retrieve non-existent booking",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 108600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I have authentication token",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 112234000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 53,
+            "name": "I request a booking with ID \"999999999\"",
+            "match": {
+              "location": "src\\step-definitions\\booking.steps.js:153"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 112486800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 54,
+            "name": "the response status code should be 404",
+            "match": {
+              "location": "src\\step-definitions\\auth.steps.js:47"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 603200,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'status')\n    at World.<anonymous> (C:\\Users\\JUAN\\api-auto-playwright\\src\\step-definitions\\auth.steps.js:48:32)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 691899
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 51
+          },
+          {
+            "name": "@unhappy-path",
+            "line": 51
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "booking-api-testing",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Booking API Testing",
+    "tags": [],
+    "uri": "src\\features\\booking.feature"
+  },
+  {
+    "description": "    As a system administrator\n    I want to monitor the API health\n    So that I can ensure the service is available",
+    "elements": [
+      {
+        "description": "",
+        "id": "health-check-api-testing;successfully-check-api-health",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Successfully check API health",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 117899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I send a health check request",
+            "match": {
+              "location": "src\\step-definitions\\ping.steps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 114556300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "the API should respond with status code 201",
+            "match": {
+              "location": "src\\step-definitions\\ping.steps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 631099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "the response time should be within acceptable limits",
+            "match": {
+              "location": "src\\step-definitions\\ping.steps.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 983299
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 151299
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 6
+          },
+          {
+            "name": "@happy-path",
+            "line": 6
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "health-check-api-testing",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Health Check API Testing",
+    "tags": [],
+    "uri": "src\\features\\ping.feature"
+  }
+]
